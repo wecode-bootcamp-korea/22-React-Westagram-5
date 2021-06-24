@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Aside extends Component {
   render() {
-    return (
-      <div>
-        aside
-      </div>
-    )
+    return <div>aside</div>;
   }
 }
 
-export default Aside
+export default Aside;

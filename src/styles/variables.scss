@@ -1,0 +1,22 @@
+$bg-color: #fafafa;
+$theme-color: #ffffff;
+$login-btn-color: #0095f6;
+
+@mixin border {
+  border: 1px solid #dbdbdb;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}

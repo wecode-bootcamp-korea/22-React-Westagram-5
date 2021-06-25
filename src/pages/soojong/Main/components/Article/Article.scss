@@ -1,8 +1,17 @@
 @import "../../../../../styles//common.scss";
 
-article {
+@mixin flex-column {
   display: flex;
   flex-direction: column;
+}
+
+@mixin img-circle {
+  object-fit: cover;
+  border-radius: 70%;
+}
+
+article {
+  @include flex-column;
 
   img {
     width: 612px;
@@ -30,8 +39,7 @@ article {
       .feed_profile {
         width: 32px;
         height: 32px;
-        object-fit: cover;
-        border-radius: 70%;
+        @include img-circle;
       }
     }
     .fa-ellipsis-h {
@@ -64,8 +72,7 @@ article {
     img {
       width: 24px;
       height: 24px;
-      border-radius: 70%;
-      object-fit: cover;
+      @include img-circle;
     }
     .like_people_profile {
       display: flex;
@@ -133,7 +140,7 @@ article {
       border: none;
       cursor: pointer;
       background-color: $theme-color;
-      color: $login-btn-color;
+      color: #0095f6;
     }
   }
 }

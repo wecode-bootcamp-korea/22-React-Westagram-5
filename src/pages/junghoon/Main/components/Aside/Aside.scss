@@ -1,0 +1,110 @@
+@import "../../../../../styles/common.scss";
+
+@mixin asideImage {
+  width: 42px;
+  height: 42px;
+  border-radius: 70%;
+}
+
+.main-right {
+  position: fixed;
+  width: 320px;
+  top: 69px;
+  margin-left: 630px;
+  font-size: 12px;
+
+  .profileSetRight {
+    @include flex-align-center;
+
+    .dieterRamsRight img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 70%;
+    }
+
+    .westaIdRightSet {
+      padding-top: 3px;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .westaIdRight {
+      font-weight: bold;
+      margin-top: 6px;
+    }
+  }
+
+  .storyBox {
+    width: 320px;
+    height: 240px;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    @include border;
+    background-color: $theme-color;
+    overflow: hidden;
+  }
+
+  .storyBoxNav {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto 10px auto;
+    font-size: 12px;
+
+    .storyBoxTitle {
+      color: #828282;
+      font-size: 14px;
+    }
+
+    .storyBoxSeeAll {
+      font-size: 14px;
+      font-weight: bolder;
+    }
+  }
+
+  .profileSetStory {
+    @include flex-align-center;
+    margin-top: 15px;
+
+    .bauhausLogoStory {
+      @include asideImage;
+      margin-right: 10px;
+    }
+
+    .bauhausLogoStory img {
+      @include asideImage;
+      object-fit: cover;
+    }
+
+    .westaIdStorySet {
+      margin-top: 7px;
+
+      .westaIdStory {
+        font-weight: bolder;
+      }
+
+      .westaStoryTime {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .followRecommendBox {
+    width: 320px;
+    height: 220px;
+    margin-top: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    @include border;
+    background-color: $theme-color;
+    overflow: hidden;
+  }
+
+  .policyInfo {
+    margin: 15px 0 0 6px;
+    color: #828282;
+  }
+}

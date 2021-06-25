@@ -1,0 +1,63 @@
+$theme-color: #fafafa;
+
+.navBarBorder {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  height: 54px;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #ebebeb;
+  background-color: $theme-color;
+}
+
+.navBar {
+  display: flex;
+  width: 965px;
+  justify-content: space-between;
+  position: fixed;
+  height: 54px;
+  padding-top: 10px;
+  top: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+#searchBar {
+  width: 250px;
+  height: 34px;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid #ebebeb;
+  background-color: $theme-color;
+  font-size: 14px;
+  text-align: center;
+}
+
+.weLogo {
+  display: flex;
+  align-items: center;
+}
+
+.westaWord {
+  border-left: 2px solid black;
+  margin-left: 6px;
+  padding-left: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.weLogo img {
+  width: 28px;
+}
+
+.iconSet {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-around;
+  width: 100px;
+}
+.iconSet img {
+  width: 27px;
+  height: 27px;
+}

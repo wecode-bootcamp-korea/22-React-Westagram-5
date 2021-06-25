@@ -1,0 +1,140 @@
+@import "../../../../../styles/common.scss";
+
+@mixin statusIconSize {
+  width: 20px;
+  object-fit: cover;
+  margin-right: 7px;
+}
+
+@mixin profileLogoSize {
+  width: 42px;
+  height: 42px;
+}
+
+@mixin postingImageSize {
+  width: 614px;
+  height: 614px;
+  object-fit: cover;
+}
+
+.feeds {
+  height: 1002px;
+  width: 935px;
+  margin-top: 78px;
+
+  .articleAll {
+    width: 616px;
+    @include border;
+    border-radius: 5px;
+    background-color: $theme-color;
+  }
+
+  .profileSet {
+    @include flex-align-center;
+    margin-bottom: 10px;
+    padding: 8px 0 0 6px;
+
+    .bauhausLogo {
+      @include profileLogoSize;
+      border-radius: 70%;
+      margin-right: 10px;
+    }
+    .bauhausLogo img {
+      @include profileLogoSize;
+      border-radius: 70%;
+      object-fit: cover;
+    }
+    .westaId {
+      font-weight: bolder;
+    }
+  }
+
+  .postingImage img {
+    @include postingImageSize;
+  }
+
+  .postingBtn {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    .postingBtnLeft {
+      display: flex;
+      justify-content: space-around;
+
+      .heart {
+        @include statusIconSize;
+      }
+
+      .commentBtn {
+        @include statusIconSize;
+      }
+
+      .uploadBtn {
+        @include statusIconSize;
+      }
+    }
+    .bookMarkBtn {
+      @include statusIconSize;
+    }
+  }
+
+  .like {
+    @include flex-align-center;
+    margin-top: 5px;
+
+    .bauhausLogoSmall img {
+      width: 20px;
+      height: 20px;
+      border-radius: 70%;
+      margin-right: 3px;
+      margin-left: 10px;
+      object-fit: cover;
+    }
+
+    .westaIdSmall {
+      font-weight: bold;
+    }
+  }
+
+  .postingWd {
+    margin: 5px 10px auto 10px;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 7px;
+
+    .westaIdComment {
+      font-weight: bold;
+    }
+
+    .commentTime {
+      margin-top: 3px;
+      color: #8d8d8d;
+      font-size: 11px;
+    }
+  }
+
+  .comment {
+    display: flex;
+    margin: 10px 10px auto 10px;
+    color: #828282;
+    font-size: 16px;
+
+    #commentBoard {
+      width: 590px;
+      @include border;
+      border-radius: 5px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      background-color: $theme-color;
+    }
+
+    .itemAdd {
+      border: none;
+      background-color: $theme-color;
+      padding-bottom: 10px;
+      padding-right: 7px;
+      color: #ababab;
+    }
+  }
+}

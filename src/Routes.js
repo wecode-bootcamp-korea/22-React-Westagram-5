@@ -7,6 +7,7 @@ import LoginKim from "./pages/soojong/Login/Login";
 import MainPark from "./pages/junghoon/Main/Main";
 import MainChoi from "./pages/minjae/Main/Main";
 import MainKim from "./pages/soojong/Main/Main";
+import State from "./State";
 
 import "./styles/reset.scss";
 import "./styles/common.scss";
@@ -22,6 +23,7 @@ class Routes extends Component {
           <Route exact path="/mainPark" component={MainPark} />
           <Route exact path="/mainChoi" component={MainChoi} />
           <Route exact path="/mainKim" component={MainKim} />
+          <Route exact path="/state" component={State} />
         </Switch>
       </Router>
     );

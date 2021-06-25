@@ -1,0 +1,51 @@
+@import "../../../styles/common.scss";
+
+.nav {
+  @include flex-justify-center;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  background-color: $theme-color;
+  @include border;
+}
+
+.navContainer {
+  background-color: $theme-color;
+  @include flex-justify-between;
+  width: 120vh;
+  @include flex-align-center;
+}
+
+.navLogo {
+  font-size: 24px;
+  font-family: "Lobster";
+}
+
+.navSearch {
+  width: 240px;
+  padding: 7px 10px 5px 10px;
+  @include border;
+  border-radius: 3px;
+  background-color: $bg-color;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: rgb(159, 159, 159);
+    text-align: center;
+  }
+}
+
+.navMenu {
+  @include flex-justify-between;
+  list-style: none;
+
+  .navIcon {
+    width: 28px;
+    margin: 10px;
+  }
+}

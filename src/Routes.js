@@ -10,6 +10,7 @@ import MainKim from "./pages/soojong/Main/Main";
 
 import "./styles/reset.scss";
 import "./styles/common.scss";
+import "./styles/variables.scss";
 
 class Routes extends Component {
   render() {

@@ -1,0 +1,91 @@
+@import "../../../../../styles/common.scss";
+
+/* main right */
+.main_right {
+  width: 320px;
+  margin-left: 650px;
+  position: fixed;
+
+  .myprofile_insta {
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px 10px;
+
+    .myprofile_box {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      margin-right: 16px;
+
+      .myprofile_img {
+        width: 56px;
+        height: 56px;
+        border-radius: 70%;
+        object-fit: cover;
+      }
+    }
+  }
+  .user_information {
+    display: flex;
+    flex-direction: column;
+
+    .userid_profile,
+    .otherUserId {
+      color: #262626;
+      font-weight: 800;
+    }
+    .username {
+      color: #8e8e8e;
+    }
+  }
+
+  .section_story {
+    width: 290px;
+    height: 228px;
+    background-color: $theme-color;
+    @include border;
+    border-radius: 4px;
+    padding: 8px 16px;
+    overflow: hidden;
+
+    .story_title {
+      @include flex-justify-between;
+      @include flex-align-center;
+
+      .story {
+        color: #8e8e8e;
+        vertical-align: middle;
+        font-size: 14px;
+      }
+      .viewall {
+        font-size: 12px;
+        color: #262626;
+        vertical-align: middle;
+      }
+    }
+    .user_story {
+      @include flex-align-center;
+
+      .other_profilebox {
+        @include flex-align-center;
+        margin: 8px 12px 8px 0;
+      }
+      .other_username {
+        margin-top: 4px;
+        color: #8e8e8e;
+        font-size: 12px;
+      }
+
+      .other_userinfo {
+        display: flex;
+        flex-direction: column;
+      }
+      .other_profileimg {
+        width: 38px;
+        height: 38px;
+        object-fit: cover;
+        border-radius: 70%;
+      }
+    }
+  }
+}

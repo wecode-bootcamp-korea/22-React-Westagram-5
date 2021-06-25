@@ -1,0 +1,19 @@
+@import "../../../styles/common.scss";
+
+main {
+  width: 935px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.feed {
+  display: flex;
+  width: 614px;
+  @include border;
+  border-radius: 4px;
+  background-color: #ffffff;
+  margin-right: 28px;
+}

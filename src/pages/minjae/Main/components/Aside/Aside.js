@@ -10,7 +10,7 @@ class Aside extends Component {
             <img
               alt="icon_profile"
               className="profileIcon"
-              src="/images/minjae/icon_profile.PNG"
+              src="/images/minjae/icon_profiletitle.PNG"
             />
             <div className="profileText">
               <span className="nickName2">wecode_22th_bootcamp</span>
@@ -20,30 +20,48 @@ class Aside extends Component {
           <div className="story">
             <h2 class="storyTitle">스토리</h2>
             <p className="asideName">
-              <img alt="icon_profile" src="/images/minjae/icon_profile.PNG" />
+              <img
+                alt="icon_profile"
+                src="/images/minjae/icon_profiletitle.PNG"
+              />
               &nbsp;닉네임
             </p>
             <p className="asideName">
-              <img alt="icon_profile" src="/images/minjae/icon_profile.PNG" />
+              <img
+                alt="icon_profile"
+                src="/images/minjae/icon_profiletitle.PNG"
+              />
               &nbsp;닉네임
             </p>
             <p className="asideName">
-              <img alt="icon_profile" src="/images/minjae/icon_profile.PNG" />
+              <img
+                alt="icon_profile"
+                src="/images/minjae/icon_profiletitle.PNG"
+              />
               &nbsp;닉네임
             </p>
           </div>
           <div className="story">
             <h2 class="storyTitle">회원님을 위한 추천</h2>
             <p className="asideName">
-              <img alt="icon_profile" src="/images/minjae/icon_profile.PNG" />
+              <img
+                alt="icon_profile"
+                src="/images/minjae/icon_profiletitle.PNG"
+              />
               &nbsp;닉네임
             </p>
             <p className="asideName">
-              <img alt="icon_profile" src="/images/minjae/icon_profile.PNG" />
+              <img
+                alt="icon_profile"
+                src="/images/minjae/icon_profiletitle.PNG"
+              />
               &nbsp;닉네임
             </p>
             <p className="asideName">
-              <img alt="icon_profile" src="/images/minjae/icon_profile.PNG" />
+              <img
+                alt="icon_profile"
+                src="/images/minjae/icon_profiletitle.PNG"
+              />
               &nbsp;닉네임
             </p>
           </div>

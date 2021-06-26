@@ -12,7 +12,10 @@ class Main extends Component {
         <Nav />
         <main>
           <div className="mainInner">
-            <Article />
+            <div>
+              <Article />
+              <Article />
+            </div>
             <Aside />
           </div>
         </main>

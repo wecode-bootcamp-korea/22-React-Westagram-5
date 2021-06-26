@@ -7,7 +7,10 @@ class Article extends Component {
       <div className="Article">
         <article>
           <div className="articleHeader">
-            <img alt="icon_profile" src="/images/minjae/icon_profile.png" />
+            <img
+              alt="icon_profile"
+              src="/images/minjae/icon_profiletitle.png"
+            />
             <span className="nickName">wecode_22th</span>
           </div>
           <img
@@ -17,13 +20,13 @@ class Article extends Component {
           />
           <div className="feedIcon">
             <span className="fi">
-              <img alt="heart" src="/images/minjae/heart-regular.svg" />
+              <img alt="heart" src="/images/minjae/icon_heart.png" />
             </span>
             <span className="fi">
-              <img alt="comment" src="/images/minjae/comment-regular.svg" />
+              <img alt="comment" src="/images/minjae/icon_comment.png" />
             </span>
             <span className="fi">
-              <img alt="share" src="/images/minjae/share-square-solid.svg" />
+              <img alt="share" src="/images/minjae/icon_share.png" />
             </span>
           </div>
           <ul className="feedComment" />

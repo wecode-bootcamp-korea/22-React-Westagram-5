@@ -20,7 +20,7 @@ class Nav extends Component {
                 <img
                   alt="explore"
                   className="navIcon"
-                  src="/images/minjae/explore.png"
+                  src="/images/minjae/icon_explore.png"
                 />
               </Link>
             </li>
@@ -29,7 +29,7 @@ class Nav extends Component {
                 <img
                   alt="heart"
                   className="navIcon"
-                  src="/images/minjae/heart.png"
+                  src="/images/minjae/icon_heart.png"
                 />
               </Link>
             </li>
@@ -38,7 +38,7 @@ class Nav extends Component {
                 <img
                   alt="profile"
                   className="navIcon"
-                  src="/images/minjae/profile.png"
+                  src="/images/minjae/icon_profile.png"
                 />
               </Link>
             </li>

@@ -1,0 +1,28 @@
+[33mcommit 51e5971f52adf6bb4f880930180e505bd391a54d[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/minjae[m[33m, [m[1;31morigin/feature/minjae[m[33m)[m
+Author: rious275 <rious275@naver.com>
+Date:   Fri Jun 25 17:25:26 2021 +0900
+
+    React 팀 프로젝트 이동 완료
+    
+      - common.scss 공용 파일 생성
+      - 각자 이름 폴더 생성 후 경로 수정해서 정상 가동
+    
+    props, state 활용 이벤트 구현 진행중
+
+[33mcommit 78c5a082919ed585e16dae2fbec55e4c3b079565[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: we-dohyeon <80258195+we-dohyeon@users.noreply.github.com>
+Date:   Thu Jun 24 17:16:49 2021 +0900
+
+    Create pull_request_template.md
+
+[33mcommit 6118873a67facae9bc478b38e4c2305cd80b5cde[m
+Author: Junghoon-P <qkr0454@naver.com>
+Date:   Thu Jun 24 17:11:20 2021 +0900
+
+    Add: 초기 세팅 완료.
+
+[33mcommit 3617a84c372176b57cf0f20c80dca4a3c7457e61[m
+Author: Junghoon-P <qkr0454@naver.com>
+Date:   Thu Jun 24 16:08:37 2021 +0900
+
+    Initialize project using Create React App

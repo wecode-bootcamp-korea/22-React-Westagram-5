@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./Login.scss";
 import "../../../styles/common.scss";
+import { id } from "postcss-selector-parser";
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(e) {
+    super(e);
 
     this.state = {
       userId: "",
@@ -28,8 +29,21 @@ class Login extends Component {
     });
   };
 
+  checkSubmmit = () => {
+    const { userId, userPw } = this.state;
+    return userId.includes("@") > 0 && userPw.lenght >= 5;
+  };
+
+  handleSubmit = (e) => {
+    if (!this.checkSubmmit()) {
+      e.preventDefault();
+      return;
+    }
+  };
+
   render() {
-    console.log(`this.state`, this.state);
+    const isEnabled = this.checkSubmmit();
+
     return (
       <div className="LogInPageAll">
         <main className="mainLogIn">
@@ -56,7 +70,11 @@ class Login extends Component {
               </div>
             </section>
             <div>
-              <button className="login-btn" onClick={this.goToMain}>
+              <button
+                className="login-btn"
+                disabled={!isEnabled}
+                onClick={this.goToMain}
+              >
                 로그인
               </button>
             </div>

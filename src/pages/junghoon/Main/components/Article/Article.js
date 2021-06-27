@@ -21,7 +21,7 @@ class Article extends Component {
           <div className="postingImage">
             <img
               src="https://pbs.twimg.com/media/E1q-1mrWUAEkwzD.jpg"
-              alt="Posting Image"
+              alt="Posting"
             />
           </div>
           <div className="postingBtn">

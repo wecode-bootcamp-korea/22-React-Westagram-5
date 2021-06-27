@@ -1,12 +1,35 @@
 import React, { Component } from "react";
 import "./Login.scss";
+import "../../../styles/common.scss";
 
 class Login extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      userId: "",
+      userPw: "",
+    };
+  }
+
   goToMain = () => {
     this.props.history.push("/mainPark");
   };
 
+  handleIdInput = (e) => {
+    this.setState({
+      userId: e.target.value,
+    });
+  };
+
+  handlePwInput = (e) => {
+    this.setState({
+      userPw: e.target.value,
+    });
+  };
+
   render() {
+    console.log(`this.state`, this.state);
     return (
       <div className="LogInPageAll">
         <main className="mainLogIn">
@@ -19,11 +42,17 @@ class Login extends Component {
                 <input
                   type="text"
                   id="typingId"
+                  onChange={this.handleIdInput}
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                 />
               </div>
               <div>
-                <input type="password" id="password" placeholder="비밀번호" />
+                <input
+                  type="password"
+                  id="password"
+                  onChange={this.handlePwInput}
+                  placeholder="비밀번호"
+                />
               </div>
             </section>
             <div>

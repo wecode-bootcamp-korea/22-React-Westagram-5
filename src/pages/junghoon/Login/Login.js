@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Login.scss";
 import "../../../styles/common.scss";
-import { id } from "postcss-selector-parser";
 
 class Login extends Component {
   constructor(e) {
@@ -39,10 +38,6 @@ class Login extends Component {
       e.preventDefault();
       return;
     }
-  };
-
-  changBtnColor = () => {
-    const { btnActive } = this.state;
   };
 
   render() {

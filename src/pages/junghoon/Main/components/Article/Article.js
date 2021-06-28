@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Article.scss";
 
-class Article extends Component {
+class Article extends React.Component {
   render() {
     return (
       <div className="feeds">

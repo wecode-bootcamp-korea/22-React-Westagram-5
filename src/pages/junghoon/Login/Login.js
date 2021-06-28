@@ -31,7 +31,7 @@ class Login extends Component {
 
   checkSubmmit = () => {
     const { userId, userPw } = this.state;
-    return userId.includes("@") > 0 && userPw.lenght >= 5;
+    return userId.includes("@") > 0 && userPw.length >= 5;
   };
 
   handleSubmit = (e) => {
@@ -39,6 +39,10 @@ class Login extends Component {
       e.preventDefault();
       return;
     }
+  };
+
+  changBtnColor = () => {
+    const { btnActive } = this.state;
   };
 
   render() {
@@ -74,6 +78,7 @@ class Login extends Component {
                 className="login-btn"
                 disabled={!isEnabled}
                 onClick={this.goToMain}
+                style={{ opacity: isEnabled ? 1 : 0.2 }}
               >
                 로그인
               </button>

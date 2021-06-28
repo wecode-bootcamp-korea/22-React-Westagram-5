@@ -8,12 +8,14 @@
   top: 0;
   background-color: $theme-color;
   @include border;
+  z-index: 999;
 }
 
 .navContainer {
   background-color: $theme-color;
   @include flex-justify-between;
-  width: 130vh;
+  width: 975px;
+  padding: 0 20px;
   @include flex-align-center;
 }
 

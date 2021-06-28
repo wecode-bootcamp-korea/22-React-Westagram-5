@@ -2,6 +2,22 @@ import React, { Component } from "react";
 import "./Article.scss";
 
 class Article extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      disabled: true,
+      commentBtnOpacity: "30%",
+      iptCommentValue: "",
+    };
+  }
+
+  handleCommentBox = (e) => {
+    this.setState({ iptCommentValue: e.target.value });
+  };
+
+  handleCommentBtn = () => {};
+
   render() {
     return (
       <div className="Article">
@@ -35,8 +51,17 @@ class Article extends Component {
               type="text"
               className="commentBox"
               placeholder="댓글 달기.."
+              onInput={this.handleCommentBox}
+              value={this.state.iptCommentValue}
             />
-            <button className="commentBtn">게시</button>
+            <button
+              className="commentBtn"
+              style={{ opacity: this.state.commentBtnOpacity }}
+              disabled={this.state.disabled}
+              onClick={this.handleCommentBtn}
+            >
+              게시
+            </button>
           </form>
         </article>
       </div>

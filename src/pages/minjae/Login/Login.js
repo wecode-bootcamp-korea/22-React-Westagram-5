@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Login.scss";
 import "../Nav/Nav";
 import "../../../styles/common.scss";
-import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor() {
@@ -22,25 +21,17 @@ class Login extends Component {
 
   handleIdInput = (e) => {
     this.setState({ iptIdValue: e.target.value });
-
-    // if (e.target.value === "") {
-    //   this.setState({ disabled: true, btnOpacity: "30%" });
-    // } else if (e.target.value !== "" && e.target.value.includes("@")) {
-    //   this.setState({ disabled: false, btnOpacity: "100%" });
-    // }
   };
 
   handlePwInput = (e) => {
     this.setState({ iptPwValue: e.target.value });
-
-    // if (e.target.value.length < 5) {
-    //   this.setState({ disabled: true, btnOpacity: "30%" });
-    // } else if (e.target.value.length > 4) {
-    //   this.setState({ disabled: false, btnOpacity: "100%" });
-    // }
   };
 
-  handleBtn = (e) => {};
+  handleBtn = () => {
+    this.state.iptIdValue.includes("@") && this.state.iptPwValue.length > 4
+      ? this.setState({ disabled: false, btnOpacity: "100%" })
+      : this.setState({ disabled: true, btnOpacity: "30%" });
+  };
 
   render() {
     return (
@@ -52,6 +43,7 @@ class Login extends Component {
               <form className="form">
                 <input
                   onChange={this.handleIdInput}
+                  onKeyUp={this.handleBtn}
                   type="text"
                   className="id"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -59,6 +51,7 @@ class Login extends Component {
                 />
                 <input
                   onChange={this.handlePwInput}
+                  onKeyUp={this.handleBtn}
                   type="password"
                   className="password"
                   placeholder="비밀번호"
@@ -67,21 +60,19 @@ class Login extends Component {
                 <button
                   disabled={this.state.disabled}
                   className="button"
-                  style={{
-                    opacity: this.state.btnOpacity,
-                  }}
+                  style={{ opacity: this.state.btnOpacity }}
                   onClick={this.goToMain}
                 >
                   로그인
                 </button>
               </form>
               <section className="bottom">
-                <Link
+                <a
                   className="pw"
                   href="https://www.instagram.com/accounts/password/reset/"
                 >
                   비밀번호를 잊으셨나요?
-                </Link>
+                </a>
               </section>
             </section>
           </div>

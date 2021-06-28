@@ -2,7 +2,36 @@ import React from "react";
 import "./Article.scss";
 
 class Article extends React.Component {
+  constructor(e) {
+    super(e);
+
+    this.state = {
+      comment: "",
+      comments: [],
+    };
+  }
+
+  commentInput = (e) => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+
+  commentSubmit = (e) => {
+    this.setState({
+      comments: this.state.comments.concat([this.state.comment]),
+      comment: "",
+    });
+  };
+  //enter키로 입력
+  enterPress = (e) => {
+    if (e.key === "Enter") {
+      this.commentSubmit();
+    }
+  };
+
   render() {
+    console.log(`this.state`, this.state);
     return (
       <div className="feeds">
         <article className="articleAll">
@@ -66,8 +95,15 @@ class Article extends React.Component {
             </span>
             <p className="commentTime">54분전</p>
           </div>
-          <ul className="items">
-            <li className="item"></li>
+          <ul className="commentList">
+            {this.state.comments.map((comment) => {
+              return (
+                <li className="commentBox">
+                  <span className="westaId">dieter_rams </span>
+                  {comment}
+                </li>
+              );
+            })}
           </ul>
           <div className="comment">
             <input
@@ -75,8 +111,11 @@ class Article extends React.Component {
               type="text"
               id="commentBoard"
               placeholder="댓글 달기..."
+              value={this.state.comment}
+              onChange={this.commentInput}
+              onKeyUp={this.enterPress}
             />
-            <button className="itemAdd">
+            <button className="itemAdd" onClick={this.commentSubmit}>
               <i className="fas fa-plus"></i>
             </button>
           </div>

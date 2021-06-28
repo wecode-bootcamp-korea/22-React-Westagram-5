@@ -59,6 +59,7 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 5px;
+
     .postingBtnLeft {
       display: flex;
       justify-content: space-around;
@@ -114,6 +115,18 @@
     }
   }
 
+  .commentList {
+    margin-left: 10px;
+
+    .commentBox {
+      margin: 5px auto auto 5px;
+
+      .westaId {
+        font-weight: bold;
+      }
+    }
+  }
+
   .comment {
     display: flex;
     margin: 10px 10px auto 10px;
@@ -124,7 +137,7 @@
       width: 590px;
       @include border;
       border-radius: 5px;
-      padding-left: 10px;
+      padding: 5px 10px 5px 10px;
       margin-bottom: 10px;
       background-color: $theme-color;
     }

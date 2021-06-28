@@ -33,15 +33,9 @@ class Login extends Component {
     return userId.includes("@") > 0 && userPw.length >= 5;
   };
 
-  handleSubmit = (e) => {
-    if (!this.checkSubmmit()) {
-      e.preventDefault();
-      return;
-    }
-  };
-
   render() {
     const isEnabled = this.checkSubmmit();
+    console.log(isEnabled);
 
     return (
       <div className="LogInPageAll">

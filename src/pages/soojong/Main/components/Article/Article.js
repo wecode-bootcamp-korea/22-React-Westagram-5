@@ -4,6 +4,30 @@ import "../../../../../styles/reset.scss";
 import "../Article/Article.scss";
 
 class Article extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: "",
+      comments: [],
+    };
+  }
+
+  InputValue = (e) => {
+    this.setState({ comment: e.target.value });
+  };
+
+  enterComments = (e) => {
+    if (e.key === "Enter") {
+      this.uploadComments();
+      e.target.value = "";
+    }
+  };
+
+  uploadComments = () => {
+    this.state.comments.push({ text: this.state.comment });
+    this.setState({ comment: "" });
+  };
+
   render() {
     return (
       <>
@@ -45,7 +69,15 @@ class Article extends React.Component {
           <div className="comment_time">
             <p>3시간 전</p>
           </div>
-          <span className="new_comment"></span>
+
+          <div className="commentList">
+            {this.state.comments.map((e) => (
+              <li>
+                <span>Soox_jk</span> {e.text}
+              </li>
+            ))}
+            <span className="new_comment"></span>
+          </div>
 
           <div className="commentbox">
             <input
@@ -53,8 +85,15 @@ class Article extends React.Component {
               className="input_comment"
               id="input_comment"
               placeholder="댓글 달기 ..."
+              onChange={this.InputValue}
+              onKeyPress={this.enterComments}
             />
-            <button type="submit" className="submit_button" id="comment_submit">
+            <button
+              type="submit"
+              className="submit_button"
+              id="comment_submit"
+              onClick={this.uploadComments}
+            >
               게시
             </button>
           </div>

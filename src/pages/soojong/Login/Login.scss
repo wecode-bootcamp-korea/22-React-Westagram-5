@@ -42,22 +42,23 @@
     margin-bottom: 16px;
   }
 
-  .loginButton {
+  .login_btn {
     width: 264px;
     height: 34px;
     border: none;
     border-radius: 4px;
     margin-bottom: 48px;
-    background-color: $login-btn-color;
-    opacity: 0.5;
     color: $theme-color;
     cursor: pointer;
+    background-color: #0095f6;
   }
 
-  .loginButton:disabled {
-    background-color: $login-btn-color;
-    opacity: 0.5;
-  }
+  // .activeBtn {
+  //   background-color: #0095f6;
+  // }
+  // .unactive {
+  //   background-color: #c0dffd;
+  // }
 
   .forgotPassword {
     position: absolute;

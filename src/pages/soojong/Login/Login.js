@@ -8,19 +8,32 @@ class Login extends React.Component {
     this.state = {
       userId: "",
       userPw: "",
+      // btnActive: false,
     };
   }
 
   handleIdInput = (event) => {
     this.setState({
-      userId: `${event.target.value}`,
+      userId: event.target.value,
     });
   };
 
   handlePwInput = (event) => {
     this.setState({
-      userPw: `${event.target.value}`,
+      userPw: event.target.value,
     });
+  };
+
+  handleButton = () => {
+    const { userId, userPw } = this.state;
+    return userId.includes("@") && userPw.length >= 5;
+  };
+
+  checkbutton = (e) => {
+    if (!this.handleButton()) {
+      e.preventDefault();
+      return;
+    }
   };
 
   goToMain = () => {
@@ -28,6 +41,8 @@ class Login extends React.Component {
   };
 
   render() {
+    const isEnabled = this.handleButton();
+
     return (
       <>
         <div className="LoginContainer">
@@ -40,6 +55,7 @@ class Login extends React.Component {
               name="userId"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={this.handleIdInput}
+              onKeyUp={this.handleButton}
             />
             <input
               type="password"
@@ -48,11 +64,14 @@ class Login extends React.Component {
               name="userPw"
               placeholder="비밀번호"
               onChange={this.handlePwInput}
+              onKeyUp={this.handleButton}
             />
             <button
-              className="loginButton"
+              className="login_btn"
               id="btnLogin"
               onClick={this.goToMain}
+              disabled={!isEnabled}
+              style={{ opacity: isEnabled ? 1 : 0.5 }}
             >
               로그인
             </button>

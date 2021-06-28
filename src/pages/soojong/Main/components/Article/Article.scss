@@ -111,10 +111,16 @@ article {
     }
   }
 
-  .new_comment {
+  .commentList li {
     font-size: 14px;
     margin: 0 16px 16px 12px;
+    list-style: none;
+
+    span {
+      font-weight: 800;
+    }
   }
+
   .commentbox {
     @include flex-align-center;
     @include flex-justify-between;

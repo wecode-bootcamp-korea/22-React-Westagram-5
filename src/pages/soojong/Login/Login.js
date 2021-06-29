@@ -29,13 +29,6 @@ class Login extends React.Component {
     return userId.includes("@") && userPw.length >= 5;
   };
 
-  checkbutton = (e) => {
-    if (!this.handleButton()) {
-      e.preventDefault();
-      return;
-    }
-  };
-
   goToMain = () => {
     this.props.history.push("/mainkim");
   };

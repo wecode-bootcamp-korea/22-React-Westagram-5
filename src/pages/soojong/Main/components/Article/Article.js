@@ -1,4 +1,6 @@
 import React from "react";
+import Comment from "../Article/Comment";
+import COMMENTDATA from "./commentData";
 import "../../../../../styles/common.scss";
 import "../../../../../styles/reset.scss";
 import "../Article/Article.scss";
@@ -12,6 +14,12 @@ class Article extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      commentData: COMMENTDATA,
+    });
+  }
+
   InputValue = (e) => {
     this.setState({ comment: e.target.value });
   };
@@ -19,13 +27,30 @@ class Article extends React.Component {
   enterComments = (e) => {
     if (e.key === "Enter") {
       this.uploadComments();
-      e.target.value = "";
     }
   };
 
   uploadComments = () => {
-    this.state.comments.push({ text: this.state.comment });
-    this.setState({ comment: "" });
+    this.setState({
+      comments: this.state.comments.concat({ text: this.state.comment }),
+      comment: "",
+    });
+  };
+
+  addComment = (e) => {
+    e.prevenDefault();
+    const { commentData, comment } = this.state;
+    this.setState({
+      commentData: [
+        ...commentData,
+        {
+          id: commentData.length + 1,
+          userId: "jay",
+          content: comment,
+        },
+      ],
+      commentValue: "",
+    });
   };
 
   render() {
@@ -71,12 +96,7 @@ class Article extends React.Component {
           </div>
 
           <div className="commentList">
-            {this.state.comments.map((e) => (
-              <li>
-                <span>Soox_jk</span> {e.text}
-              </li>
-            ))}
-            <span className="new_comment"></span>
+            <Comment commentList={this.state.comments} />
           </div>
 
           <div className="commentbox">
@@ -87,6 +107,7 @@ class Article extends React.Component {
               placeholder="댓글 달기 ..."
               onChange={this.InputValue}
               onKeyPress={this.enterComments}
+              value={this.state.comment}
             />
             <button
               type="submit"

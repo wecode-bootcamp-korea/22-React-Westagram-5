@@ -14,8 +14,24 @@ class Article extends Component {
     };
   }
 
+  componentDidMount() {
+    fetch("data/commentData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          commentList: data,
+        });
+        // console.log(data);
+      });
+  }
+
   handleCommentBox = (e) => {
     this.setState({ iptCommentValue: e.target.value });
+
+    // console.log("함수 안", this.state.iptCommentValue);
+    // console.log("e.target.value", e.target.value);
 
     this.state.iptCommentValue.length > 0
       ? this.setState({ disabled: false, commentBtnOpacity: "100%" })
@@ -24,15 +40,31 @@ class Article extends Component {
 
   handleCommentBtn = (e) => {
     e.preventDefault();
+    const newComment = [
+      {
+        id: this.state.commentList.length + 1,
+        userName: "rious275",
+        content: [this.state.iptCommentValue],
+        isLiked: true,
+      },
+    ];
+
     this.setState({
-      commentList: this.state.commentList.concat([this.state.iptCommentValue]),
+      commentList: this.state.commentList.concat(newComment),
       iptCommentValue: "",
     });
+
+    // console.log(this.state.commentList);
   };
 
   addKeyEnter = (e) => e.key === "Enter" && this.handleCommentBtn;
 
   render() {
+    const { commentList, iptCommentValue } = this.state;
+
+    // console.log("코멘트리스트", commentList);
+    // console.log("render 안", iptCommentValue);
+
     return (
       <div className="Article">
         <article>
@@ -62,8 +94,15 @@ class Article extends Component {
           </div>
           <div className="like">좋아요 12,981개</div>
           <ul className="feedComment">
-            {this.state.commentList.map((comment, idx) => {
-              return <Comment key={idx} comment={comment} />;
+            {commentList.map((comment) => {
+              return (
+                <Comment
+                  key={comment.id}
+                  comment={comment.content}
+                  clickEvent={this.changeColor}
+                  name={comment.userName}
+                />
+              );
             })}
           </ul>
           <form className="comment">
@@ -74,7 +113,7 @@ class Article extends Component {
               onChange={this.handleCommentBox}
               type="text"
               placeholder="댓글 달기.."
-              value={this.state.iptCommentValue}
+              value={iptCommentValue}
             />
             <button
               className="commentBtn"

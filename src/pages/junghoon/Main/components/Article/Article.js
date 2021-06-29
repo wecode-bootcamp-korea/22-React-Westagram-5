@@ -1,4 +1,5 @@
 import React from "react";
+import Comment from "./components/comment/Comment";
 import "./Article.scss";
 
 class Article extends React.Component {
@@ -17,7 +18,7 @@ class Article extends React.Component {
     });
   };
 
-  commentSubmit = (e) => {
+  commentSubmit = () => {
     this.setState({
       comments: this.state.comments.concat([this.state.comment]),
       comment: "",
@@ -29,6 +30,7 @@ class Article extends React.Component {
       this.commentSubmit();
     }
   };
+  //키를 누르고 값이 없을때
 
   render() {
     console.log(`this.state`, this.state);
@@ -96,14 +98,7 @@ class Article extends React.Component {
             <p className="commentTime">54분전</p>
           </div>
           <ul className="commentList">
-            {this.state.comments.map((comment) => {
-              return (
-                <li className="commentBox">
-                  <span className="westaId">dieter_rams </span>
-                  {comment}
-                </li>
-              );
-            })}
+            <Comment commentList={this.state.comments} />
           </ul>
           <div className="comment">
             <input
@@ -113,7 +108,7 @@ class Article extends React.Component {
               placeholder="댓글 달기..."
               value={this.state.comment}
               onChange={this.commentInput}
-              onKeyUp={this.enterPress}
+              onKeyPress={this.enterPress}
             />
             <button className="itemAdd" onClick={this.commentSubmit}>
               <i className="fas fa-plus"></i>

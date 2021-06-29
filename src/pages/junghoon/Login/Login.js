@@ -34,8 +34,8 @@ class Login extends Component {
   };
 
   render() {
-    const isEnabled = this.checkSubmmit();
-    console.log(isEnabled);
+    // const isEnabled = this.checkSubmmit();
+    // console.log(isEnabled);
 
     return (
       <div className="LogInPageAll">
@@ -65,9 +65,9 @@ class Login extends Component {
             <div>
               <button
                 className="login-btn"
-                disabled={!isEnabled}
+                disabled={!this.checkSubmmit()}
                 onClick={this.goToMain}
-                style={{ opacity: isEnabled ? 1 : 0.2 }}
+                style={{ opacity: this.checkSubmmit() ? 1 : 0.2 }}
               >
                 로그인
               </button>

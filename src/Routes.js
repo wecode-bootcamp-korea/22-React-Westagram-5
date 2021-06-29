@@ -23,7 +23,7 @@ class Routes extends Component {
           <Route exact path="/mainPark" component={MainPark} />
           <Route exact path="/mainChoi" component={MainChoi} />
           <Route exact path="/mainKim" component={MainKim} />
-          <Route exact path="/state" component={State} />
+          <Route exact path="/map" component={State} />
         </Switch>
       </Router>
     );

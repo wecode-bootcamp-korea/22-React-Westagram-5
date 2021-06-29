@@ -9,15 +9,11 @@ class Login extends Component {
 
     this.state = {
       disabled: true,
+      btnOpacity: "30%",
       iptIdValue: "",
       iptPwValue: "",
-      btnOpacity: "30%",
     };
   }
-
-  goToMain = () => {
-    this.props.history.push("/Mainchoi");
-  };
 
   handleIdInput = (e) => {
     this.setState({ iptIdValue: e.target.value });
@@ -61,7 +57,7 @@ class Login extends Component {
                   disabled={this.state.disabled}
                   className="button"
                   style={{ opacity: this.state.btnOpacity }}
-                  onClick={this.goToMain}
+                  onClick={() => this.props.history.push("/Mainchoi")}
                 >
                   로그인
                 </button>

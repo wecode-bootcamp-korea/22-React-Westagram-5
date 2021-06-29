@@ -3,7 +3,6 @@ import "./Main.scss";
 import Nav from "../Nav/Nav";
 import Article from "../Main/components/Article/Article";
 import Aside from "../Main/components/Aside/Aside";
-import "../../../styles/common.scss";
 
 class Main extends Component {
   render() {

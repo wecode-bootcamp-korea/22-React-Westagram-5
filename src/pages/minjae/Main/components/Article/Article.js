@@ -9,14 +9,27 @@ class Article extends Component {
       disabled: true,
       commentBtnOpacity: "30%",
       iptCommentValue: "",
+      commentList: [],
     };
   }
 
   handleCommentBox = (e) => {
     this.setState({ iptCommentValue: e.target.value });
+
+    this.state.iptCommentValue.length > 0
+      ? this.setState({ disabled: false, commentBtnOpacity: "100%" })
+      : this.setState({ disabled: true, commentBtnOpacity: "30%" });
   };
 
-  handleCommentBtn = () => {};
+  handleCommentBtn = (e) => {
+    e.preventDefault();
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.iptCommentValue]),
+      iptCommentValue: "",
+    });
+  };
+
+  addKeyEnter = (e) => (e.key === "Enter" ? this.handleCommentBtn : null);
 
   render() {
     return (
@@ -45,13 +58,25 @@ class Article extends Component {
               <img alt="share" src="/images/minjae/icon_share.png" />
             </span>
           </div>
-          <ul className="feedComment" />
+          <div className="like">좋아요 12,981개</div>
+          <ul className="feedComment">
+            {this.state.commentList.map((comment, index) => {
+              return (
+                <li key={index}>
+                  <a href="/Mainchoi">rious275 </a>
+                  {comment}
+                </li>
+              );
+            })}
+          </ul>
           <form className="comment">
             <input
-              type="text"
+              onKeyPress={this.addKeyEnter}
               className="commentBox"
+              onKeyUp={this.handleCommentBox}
+              onChange={this.handleCommentBox}
+              type="text"
               placeholder="댓글 달기.."
-              onInput={this.handleCommentBox}
               value={this.state.iptCommentValue}
             />
             <button
@@ -70,3 +95,10 @@ class Article extends Component {
 }
 
 export default Article;
+
+// <댓글 기능 구현>
+
+// state에 초기의 텍스트 value 값 설정
+// input 텍스트 정보를 받아오는 함수 생성
+// 사용할 이벤트 함수 생성
+// onChange 속성 추가

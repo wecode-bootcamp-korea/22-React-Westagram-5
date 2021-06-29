@@ -1,37 +1,45 @@
 import React, { Component } from "react";
-import Child from "./Child";
 
 class State extends Component {
   constructor() {
     super();
 
     this.state = {
-      buttonColor: "violet",
-      changeColor: "red",
+      info: [
+        {
+          id: 0,
+          nickName: "test1",
+          content: "테스트1",
+        },
+        {
+          id: 1,
+          nickName: "test2",
+          content: "테스트2",
+        },
+      ],
     };
+    this.handleComment = this.handleComment.bind(this);
   }
 
-  handleColor = () => {
+  handleComment = (data) => {
+    const { info } = this.state;
     this.setState({
-      buttonColor: "yellow",
-    });
-  };
-
-  handleColor2 = () => {
-    this.setState({
-      changeColor: "yellow",
+      info: info.concat({
+        id: this.id++,
+        ...data,
+      }),
     });
   };
 
   render() {
-    const { buttonColor, changeColor } = this.state;
+    const { info } = this.state;
 
     return (
-      <>
-        <h1 style={{ color: buttonColor }}>부모 텍스트</h1>
-        <button onClick={this.handleColor}>change</button>
-        <Child titleColor={changeColor} changeColor={this.handleColor2} />
-      </>
+      <div>
+        <form onCreate={this.handleComment} />
+        <div>안녕하세요</div>
+        {JSON.stringify(info)}
+      </div>
     );
   }
 }

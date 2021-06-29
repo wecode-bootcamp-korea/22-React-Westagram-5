@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Article.scss";
+import Comment from "./Comment";
 
 class Article extends Component {
   constructor() {
@@ -29,7 +30,7 @@ class Article extends Component {
     });
   };
 
-  addKeyEnter = (e) => (e.key === "Enter" ? this.handleCommentBtn : null);
+  addKeyEnter = (e) => e.key === "Enter" && this.handleCommentBtn;
 
   render() {
     return (
@@ -37,6 +38,7 @@ class Article extends Component {
         <article>
           <div className="articleHeader">
             <img
+              className="articleFeedIcon"
               alt="icon_profile"
               src="/images/minjae/icon_profiletitle.png"
             />
@@ -60,13 +62,8 @@ class Article extends Component {
           </div>
           <div className="like">좋아요 12,981개</div>
           <ul className="feedComment">
-            {this.state.commentList.map((comment, index) => {
-              return (
-                <li key={index}>
-                  <a href="/Mainchoi">rious275 </a>
-                  {comment}
-                </li>
-              );
+            {this.state.commentList.map((comment, idx) => {
+              return <Comment key={idx} comment={comment} />;
             })}
           </ul>
           <form className="comment">

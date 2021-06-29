@@ -7,7 +7,7 @@
     @include flex-align-center;
 
     .profileIcon {
-      width: 50px;
+      width: 56px;
     }
 
     .profileText {
@@ -39,6 +39,10 @@
       @include flex-align-center;
       margin: 10px 0;
       width: 280px;
+
+      .asideIcon {
+        width: 32px;
+      }
     }
   }
 }

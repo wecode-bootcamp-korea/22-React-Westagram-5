@@ -11,6 +11,10 @@
     flex-direction: row;
     padding: 14px;
 
+    .articleFeedIcon {
+      width: 32px;
+    }
+
     .nickName {
       margin-left: 10px;
     }
@@ -38,7 +42,7 @@
     font-size: 14px;
 
     li {
-      padding: 6px 0 6px 0;
+      padding: 0 0 10px 0;
 
       a {
         font-weight: 800;
@@ -46,6 +50,14 @@
 
         &:hover {
           text-decoration-line: underline;
+        }
+
+        &:link {
+          color: #000000;
+        }
+
+        &:visited {
+          color: #000000;
         }
       }
     }

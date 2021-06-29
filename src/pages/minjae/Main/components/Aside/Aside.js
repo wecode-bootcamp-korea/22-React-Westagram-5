@@ -21,6 +21,7 @@ class Aside extends Component {
             <h2 class="storyTitle">스토리</h2>
             <p className="asideName">
               <img
+                className="asideIcon"
                 alt="icon_profile"
                 src="/images/minjae/icon_profiletitle.PNG"
               />
@@ -28,6 +29,7 @@ class Aside extends Component {
             </p>
             <p className="asideName">
               <img
+                className="asideIcon"
                 alt="icon_profile"
                 src="/images/minjae/icon_profiletitle.PNG"
               />
@@ -35,6 +37,7 @@ class Aside extends Component {
             </p>
             <p className="asideName">
               <img
+                className="asideIcon"
                 alt="icon_profile"
                 src="/images/minjae/icon_profiletitle.PNG"
               />
@@ -45,6 +48,7 @@ class Aside extends Component {
             <h2 class="storyTitle">회원님을 위한 추천</h2>
             <p className="asideName">
               <img
+                className="asideIcon"
                 alt="icon_profile"
                 src="/images/minjae/icon_profiletitle.PNG"
               />
@@ -52,6 +56,7 @@ class Aside extends Component {
             </p>
             <p className="asideName">
               <img
+                className="asideIcon"
                 alt="icon_profile"
                 src="/images/minjae/icon_profiletitle.PNG"
               />
@@ -59,6 +64,7 @@ class Aside extends Component {
             </p>
             <p className="asideName">
               <img
+                className="asideIcon"
                 alt="icon_profile"
                 src="/images/minjae/icon_profiletitle.PNG"
               />

@@ -1,0 +1,110 @@
+@import "../../../../../styles/common.scss";
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin img-circle {
+  object-fit: cover;
+  border-radius: 70%;
+}
+
+article {
+  @include flex-column;
+  @include border;
+  background-color: #ffffff;
+}
+article img {
+  width: 612px;
+}
+
+.article_header {
+  @include flex-justify-between;
+  position: relative;
+  width: 612px;
+  height: 60px;
+  padding: 16px;
+}
+.article_header p {
+  position: absolute;
+  line-height: 30px;
+  justify-self: flex-start;
+  left: 68px;
+  font-weight: 600;
+  color: #262626;
+}
+.profile_box {
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.feed_profile {
+  width: 32px;
+  height: 32px;
+  @include img-circle;
+}
+
+.fa-ellipsis-h {
+  margin-top: 6px;
+}
+.feed_icon {
+  @include flex-justify-between;
+  max-width: 614px;
+  padding: 12px;
+}
+.fa-heart {
+  width: 32px;
+  color: #ed4956;
+}
+
+.fa-comment {
+  width: 32px;
+}
+
+.fa-share-square {
+  width: 32px;
+}
+
+.like_people {
+  display: flex;
+}
+.like_people img {
+  width: 24px;
+  height: 24px;
+  @include img-circle;
+}
+.like_people_profile {
+  display: flex;
+  margin: 0 0 12px 12px;
+}
+.like_text {
+  line-height: 18px;
+  margin: 6px 0 0 0;
+  color: #262626;
+}
+.boldText {
+  font-weight: 600;
+}
+
+.user_commentbox {
+  display: flex;
+}
+.comment_id {
+  font-weight: 700;
+  color: #262626;
+  margin: 12px 12px 6px 12px;
+}
+
+.comment_text {
+  font-weight: 500;
+  color: #262626;
+  margin: 12px 0 0px 0;
+}
+
+.comment_time {
+  margin: 0 0 12px 12px;
+}
+.comment_time p {
+  font-size: 12px;
+  color: #8e8e8e;
+}

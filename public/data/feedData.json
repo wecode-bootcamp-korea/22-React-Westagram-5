@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "profileId": "asd_fg",
+    "profileImg": "/images/soojong/profileImg.jpg",
+    "postImg": "/images/soojong/paris.jpg",
+    "likeId": "ssss_yyy"
+  },
+  {
+    "id": 2,
+    "profileId": "asd_fg",
+    "profileImg": "/images/soojong/profileImg.jpg",
+    "postImg": "/images/soojong/paris.jpg",
+    "likeId": "ssss_yyy"
+  }
+]

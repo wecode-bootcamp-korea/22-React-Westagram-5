@@ -4,19 +4,29 @@ import "./Main.scss";
 import "../../../styles/common.scss";
 import "../../../styles/reset.scss";
 import Nav from "../Nav/Nav";
-import Article from "../Main/components/Article/Article";
+import FeedComment from "./components/Article/FeedComment";
 import Aside from "../Main/components/Aside/Aside";
+import Feed from "../../soojong/Main/components/Article/Feed";
+import "../Main/components/Article/Feed.scss";
+import "../Main/components/Article/FeedComment";
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      feeds: [],
+      feed: [
+        {
+          profileId: "asd_fg",
+          profileImg: "/images/soojong/profileImg.jpg",
+          postImg: "/images/soojong/paris.jpg",
+          likeId: "ssss_yyy",
+        },
+      ],
     };
   }
 
   componentDidMount() {
-    fetch("/data/mainData.json", {
+    fetch("http://localhost:3000/data/feedData.json", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -28,15 +38,28 @@ class Main extends React.Component {
   }
 
   render() {
+    const { feed } = this.state;
+
     return (
       <>
         <Nav />
         <main>
-          <div className="feed">
-            <Article />
-            <Aside />
-            <Article />
-          </div>
+          <article>
+            <div className="feedBox">
+              <Aside />
+              {feed.map((feeds) => {
+                return (
+                  <Feed
+                    profileId={feeds.profileId}
+                    profileImg={feeds.profileImg}
+                    postImg={feeds.postImg}
+                    likeId={feeds.likeId}
+                  />
+                );
+              })}
+              <FeedComment />
+            </div>
+          </article>
         </main>
       </>
     );

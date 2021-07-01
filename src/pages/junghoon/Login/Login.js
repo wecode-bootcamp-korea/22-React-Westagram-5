@@ -12,9 +12,9 @@ class Login extends Component {
     };
   }
 
-  goToMain = () => {
-    this.props.history.push("/mainPark");
-  };
+  // goToMain = () => {
+  //   this.props.history.push("/mainPark");
+  // };
 
   handleIdInput = (e) => {
     this.setState({
@@ -26,6 +26,29 @@ class Login extends Component {
     this.setState({
       userPw: e.target.value,
     });
+  };
+
+  onClick = () => {
+    fetch("http://10.58.6.173:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.userId,
+        password: this.state.userPw,
+        name: "정훈1121",
+        phone: "01048780454",
+        nickname: "나1나나112",
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.message === "SUCCESS") {
+          this.props.history.push("/mainPark");
+          localStorage.setItem("TOKEN", result.token);
+        } else {
+          alert("리트라이 플리즈");
+        }
+      });
   };
 
   checkSubmmit = () => {
@@ -66,7 +89,7 @@ class Login extends Component {
               <button
                 className="login-btn"
                 disabled={!this.checkSubmmit()}
-                onClick={this.goToMain}
+                onClick={this.onClick}
                 style={{ opacity: this.checkSubmmit() ? 1 : 0.2 }}
               >
                 로그인

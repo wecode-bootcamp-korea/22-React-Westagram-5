@@ -1,5 +1,12 @@
-const COMMENTDATA = [
-  {
+const COMMENTDATA =
+[ feed1 {
+  id: "1",
+  profileId: "asd_fg",
+  profileImg: "/images/soojong/profileImg.jpg",
+  postImg: "/images/soojong/paris.jpg",
+  likeId: "ssss_yyy",
+  userId: "jay",
+  content:  {
     id: 1,
     userId: "jay",
     content: "comment1",
@@ -19,6 +26,9 @@ const COMMENTDATA = [
     userId: "woo",
     content: "comment4",
   },
+
+}
+
 ];
 
 export default COMMENTDATA;

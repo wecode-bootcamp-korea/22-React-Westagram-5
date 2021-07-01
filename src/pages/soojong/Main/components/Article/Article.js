@@ -1,6 +1,6 @@
 import React from "react";
-import Comment from "../Article/Comment";
-import COMMENTDATA from "./commentData";
+import Comment from "./Comment";
+import Feed from "./Feed";
 import "../../../../../styles/common.scss";
 import "../../../../../styles/reset.scss";
 import "../Article/Article.scss";
@@ -15,9 +15,15 @@ class Article extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      commentData: COMMENTDATA,
-    });
+    fetch("http://localhost:3000/data/mainData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          comments: data,
+        });
+      });
   }
 
   InputValue = (e) => {
@@ -26,78 +32,46 @@ class Article extends React.Component {
 
   enterComments = (e) => {
     if (e.key === "Enter") {
-      this.uploadComments();
+      this.uploadComments(e);
     }
   };
 
-  uploadComments = () => {
+  uploadComments = (e) => {
+    e.preventDefault();
+    const { comments, comment } = this.state;
     this.setState({
-      comments: this.state.comments.concat({ text: this.state.comment }),
+      comments: [
+        ...comments,
+        {
+          id: comments.length + 1,
+          userId: "Soox_jk",
+          content: comment,
+        },
+      ],
       comment: "",
     });
   };
 
-  addComment = (e) => {
-    e.prevenDefault();
-    const { commentData, comment } = this.state;
-    this.setState({
-      commentData: [
-        ...commentData,
-        {
-          id: commentData.length + 1,
-          userId: "jay",
-          content: comment,
-        },
-      ],
-      commentValue: "",
-    });
-  };
-
   render() {
+    const { comments, comment } = this.state;
     return (
       <>
         <article>
-          <div className="article_header">
-            <div className="profile_box">
-              <img
-                src="images/soojong/unsplash.jpg"
-                alt="feedprofile"
-                className="feed_profile"
-              />
-            </div>
-            <p>asd_fg</p>
-            <i className="fas fa-ellipsis-h"></i>
-          </div>
-          <img src="images/soojong/paris.jpg" alt="paris" />
+          <Feed />
 
-          <div className="feed_icon">
-            <div className="feed_icon_left">
-              <i className="fas fa-heart fa-lg"></i>
-              <i className="far fa-comment fa-lg"></i>
-              <i className="far fa-share-square fa-lg"></i>
-            </div>
-            <i className="far fa-bookmark fa-lg"></i>
-          </div>
-          <div className="like_people">
-            <div className="like_people_profile">
-              <img src="images/soojong/user1.jpg" alt="like" />
-            </div>
-            <span className="like_text">
-              <span className="boldText">ssssss_yyy</span>님{" "}
-              <span className="boldText">외 10명</span>이 좋아합니다.
-            </span>
-          </div>
-          <div className="user_commentbox">
-            <span className="comment_id">Tiramisu_kung</span>
-            <span className="comment_text">나도 가고싶다! </span>
-          </div>
-          <div className="comment_time">
-            <p>3시간 전</p>
-          </div>
-
-          <div className="commentList">
-            <Comment commentList={this.state.comments} />
-          </div>
+          <ul>
+            <li className="CommentList">
+              {comments.map((comment) => {
+                return (
+                  <Comment
+                    key={comment.id}
+                    name={comment.userId}
+                    comment={comment.content}
+                  />
+                );
+              })}
+            </li>
+          </ul>
 
           <div className="commentbox">
             <input

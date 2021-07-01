@@ -8,7 +8,6 @@ class Login extends React.Component {
     this.state = {
       userId: "",
       userPw: "",
-      // btnActive: false,
     };
   }
 
@@ -31,6 +30,22 @@ class Login extends React.Component {
 
   goToMain = () => {
     this.props.history.push("/mainkim");
+    fetch("http://10.58.0.109:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.userId,
+        password: this.state.userPw,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.message === "Success") {
+          this.props.history.push("/mainkim");
+          // localStorage.setItem("TOKEN, result.token");
+        } else {
+          alert("아이디나 비밀번호를 확인해주세요.");
+        }
+      });
   };
 
   render() {

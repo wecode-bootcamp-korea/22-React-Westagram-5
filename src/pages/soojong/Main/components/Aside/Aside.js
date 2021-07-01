@@ -50,8 +50,8 @@ class Aside extends React.Component {
                 />
               </div>
               <div className="other_userinfo">
-                <span className="other_userid">jo_and</span>
-                <span className="other_username">1시간 전</span>
+                <p className="other_userid">jo_and</p>
+                <p className="other_username">1시간 전</p>
               </div>
             </div>
             <div className="user_story">
@@ -63,8 +63,8 @@ class Aside extends React.Component {
                 />
               </div>
               <div className="other_userinfo">
-                <span className="other_userid">y_gunny</span>
-                <span className="other_username">13분 전</span>
+                <p className="other_userid">y_gunny</p>
+                <p className="other_username">13분 전</p>
               </div>
             </div>
             <div className="user_story">
@@ -76,8 +76,8 @@ class Aside extends React.Component {
                 />
               </div>
               <div className="other_userinfo">
-                <span className="other_userid">92mm</span>
-                <span className="other_username">10분 전</span>
+                <p className="other_userid">92mm</p>
+                <p className="other_username">10분 전</p>
               </div>
             </div>
           </div>

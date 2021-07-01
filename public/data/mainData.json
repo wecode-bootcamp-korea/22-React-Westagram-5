@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "profileId": "asd_fg",
+    "profileImg": "/images/soojong/profileImg.jpg",
+    "postImg": "/images/soojong/paris.jpg",
+    "likeId": "ssss_yyy",
+    "userId": " jay",
+    "content": "comment1"
+  },
+  {
+    "id": 2,
+    "profileId": "asd_fg",
+    "profileImg": "/images/soojong/profileImg.jpg",
+    "postImg": "/images/soojong/paris.jpg",
+    "likeId": "ssss_yyy",
+    "userId": "kim",
+    "content": "comment2"
+  },
+  {
+    "id": 3,
+    "profileId": "asd_fg",
+    "profileImg": "/images/soojong/profileImg.jpg",
+    "postImg": "/images/soojong/paris.jpg",
+    "likeId": "ssss_yyy",
+    "userId": "park",
+    "content": "comment3"
+  },
+  {
+    "id": 4,
+    "profileId": "asd_fg",
+    "profileImg": "/images/soojong/profileImg.jpg",
+    "postImg": "/images/soojong/paris.jpg",
+    "likeId": "ssss_yyy",
+    "userId": "woo",
+    "content": "comment4"
+  }
+]

@@ -5,14 +5,11 @@ main {
   margin: 0 auto;
   @include flex-justify-between;
   padding-top: 80px;
-  padding-bottom: 80px;
 }
 
 .feed {
   display: flex;
+  flex-direction: column;
   width: 614px;
-  @include border;
-  border-radius: 4px;
-  background-color: #ffffff;
-  margin-right: 28px;
+  margin: 16px 28px 16px 0;
 }

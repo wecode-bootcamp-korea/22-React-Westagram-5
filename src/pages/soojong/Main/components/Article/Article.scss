@@ -12,6 +12,10 @@
 
 article {
   @include flex-column;
+  @include border;
+  border-radius: 4px;
+  background-color: #ffffff;
+  margin-bottom: 24px;
 
   img {
     width: 612px;
@@ -76,15 +80,15 @@ article {
     }
     .like_people_profile {
       display: flex;
-      margin: 0 12px 0 12px;
+      margin: 0 0 12px 12px;
     }
     .like_text {
       line-height: 18px;
-      margin: 6px 0 0 0px;
+      margin: 6px 0 0 0;
       color: #262626;
 
       .boldText {
-        font-weight: 700;
+        font-weight: 600;
       }
     }
   }
@@ -93,12 +97,13 @@ article {
     display: flex;
 
     .comment_id {
-      font-weight: 800;
+      font-weight: 700;
       color: #262626;
       margin: 12px 12px 6px 12px;
     }
 
     .comment_text {
+      font-weight: 500;
       color: #262626;
       margin: 12px 0 0px 0;
     }
@@ -117,7 +122,7 @@ article {
     list-style: none;
 
     span {
-      font-weight: 800;
+      font-weight: 600;
     }
   }
 

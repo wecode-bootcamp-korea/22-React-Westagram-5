@@ -14,14 +14,7 @@ class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      feed: [
-        {
-          profileId: "asd_fg",
-          profileImg: "/images/soojong/profileImg.jpg",
-          postImg: "/images/soojong/paris.jpg",
-          likeId: "ssss_yyy",
-        },
-      ],
+      feed: [],
     };
   }
 
@@ -32,7 +25,7 @@ class Main extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         this.setState({
-          feeds: data,
+          feed: data,
         });
       });
   }

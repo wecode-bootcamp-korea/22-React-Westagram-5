@@ -7,7 +7,17 @@ class Article extends Component {
     super();
 
     this.state = {
-      feedList: [],
+      feedList: [
+        {
+          id: "",
+          profileImg: "",
+          profileNickName: "",
+          feedImg: "",
+          iconHeart: "",
+          iconComment: "",
+          iconShare: "",
+        },
+      ],
     };
   }
 
@@ -21,6 +31,19 @@ class Article extends Component {
           feedList: data,
         });
       });
+
+    const newFeed = [
+      {
+        id: this.state.feedList.length + 1,
+        commentUserName: [this.states.feedList],
+        commentContent: [this.state.feedList],
+        isLiked: true,
+      },
+    ];
+
+    this.setState({
+      feedList: this.state.feedList.concat(newFeed),
+    });
   }
 
   feedListConcat = () => {
@@ -35,7 +58,7 @@ class Article extends Component {
       },
     ];
     this.setState({
-      feedList: this.state.feedList.concat(newComment), //해당 리스트의 id값을 갖고있는 comment에 달아줘야됌
+      feedList: this.state.feedList.concat(newComment),
       iptCommentValue: "",
     });
     // console.log(this.state.iptCommentValue);

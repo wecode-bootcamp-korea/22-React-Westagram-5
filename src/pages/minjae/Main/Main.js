@@ -13,7 +13,6 @@ class Main extends Component {
           <div className="mainInner">
             <div>
               <Article />
-              <Article />
             </div>
             <Aside />
           </div>

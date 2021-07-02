@@ -12,6 +12,8 @@ class Login extends Component {
       btnOpacity: "30%",
       iptIdValue: "",
       iptPwValue: "",
+      phone: "01048392736",
+      nickname: "pie",
     };
   }
 
@@ -24,12 +26,39 @@ class Login extends Component {
   };
 
   handleBtn = () => {
-    this.state.iptIdValue.includes("@") && this.state.iptPwValue.length > 4
+    const { iptIdValue, iptPwValue } = this.state;
+
+    iptIdValue.includes("@") && iptPwValue.length > 4
       ? this.setState({ disabled: false, btnOpacity: "100%" })
       : this.setState({ disabled: true, btnOpacity: "30%" });
   };
 
+  handleLogin = (e) => {
+    e.preventDefault();
+
+    fetch("http://10.58.6.218:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.iptIdValue,
+        password: this.state.iptPwValue,
+        phone: this.state.phone,
+        nickname: this.state.nickname,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+        if (res.message === "SUCCESS") {
+          this.props.history.push("/Mainchoi");
+        } else {
+          alert("error");
+        }
+      });
+  };
+
   render() {
+    const { iptIdValue, iptPwValue, disabled, btnOpacity } = this.state;
+
     return (
       <div className="Login">
         <main className="all">
@@ -43,7 +72,7 @@ class Login extends Component {
                   type="text"
                   className="id"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
-                  value={this.state.iptIdValue}
+                  value={iptIdValue}
                 />
                 <input
                   onChange={this.handlePwInput}
@@ -51,22 +80,19 @@ class Login extends Component {
                   type="password"
                   className="password"
                   placeholder="비밀번호"
-                  value={this.state.iptPwValue}
+                  value={iptPwValue}
                 />
                 <button
-                  disabled={this.state.disabled}
+                  disabled={disabled}
                   className="button"
-                  style={{ opacity: this.state.btnOpacity }}
-                  onClick={() => this.props.history.push("/Mainchoi")}
+                  style={{ opacity: btnOpacity }}
+                  onClick={this.handleLogin}
                 >
                   로그인
                 </button>
               </form>
               <section className="bottom">
-                <a
-                  className="pw"
-                  href="https://www.instagram.com/accounts/password/reset/"
-                >
+                <a className="pw" href="/mainchoi">
                   비밀번호를 잊으셨나요?
                 </a>
               </section>

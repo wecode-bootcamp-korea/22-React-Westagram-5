@@ -1,0 +1,26 @@
+.userStory {
+  display: flex;
+  align-items: center;
+}
+
+.otherProfilebox {
+  display: flex;
+  align-items: center;
+  margin: 8px 12px 8px 0;
+}
+.otherUserName {
+  margin-top: 4px;
+  color: #8e8e8e;
+  font-size: 12px;
+}
+
+.otherUserInfo {
+  display: flex;
+  flex-direction: column;
+}
+.otherProfileimg {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 70%;
+}

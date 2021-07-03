@@ -1,14 +1,11 @@
 import React from "react";
-import "./Main.js";
-import "./Main.scss";
-import "../../../styles/common.scss";
-import "../../../styles/reset.scss";
 import Nav from "../Nav/Nav";
-import FeedComment from "./components/Article/FeedComment";
+import Article from "./components/Article/Article";
 import Aside from "../Main/components/Aside/Aside";
 import Feed from "../../soojong/Main/components/Article/Feed";
+import "./Main.scss";
 import "../Main/components/Article/Feed.scss";
-import "../Main/components/Article/FeedComment";
+import "./components/Article/Article";
 
 class Main extends React.Component {
   constructor() {
@@ -50,7 +47,7 @@ class Main extends React.Component {
                   />
                 );
               })}
-              <FeedComment />
+              <Article />
             </div>
           </article>
         </main>

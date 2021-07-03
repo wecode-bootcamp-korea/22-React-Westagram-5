@@ -16,21 +16,21 @@
 }
 
 /* main right */
-.main_right {
+.mainRight {
   width: 320px;
   margin-left: 650px;
   position: fixed;
 
-  .myprofile_insta {
+  .myprofileInsta {
     @include flex-align-center;
     margin: 0 0 30px 10px;
 
-    .myprofile_box {
+    .myprofileBox {
       @include flex-align-center;
       overflow: hidden;
       margin-right: 16px;
 
-      .myprofile_img {
+      .myprofileImg {
         width: 56px;
         height: 56px;
         border-radius: 70%;
@@ -38,20 +38,20 @@
       }
     }
   }
-  .user_information {
+  .userInformation {
     @include flex-column;
 
-    .userid_profile,
+    .useridProfile,
     .otherUserId {
       color: #262626;
       font-weight: 800;
     }
-    .username {
+    .userName {
       color: #8e8e8e;
     }
   }
 
-  .section_story {
+  .sectionStory {
     width: 290px;
     height: 228px;
     background-color: $theme-color;
@@ -61,7 +61,7 @@
     border-radius: 4px;
     overflow: hidden;
 
-    .story_title {
+    .storyTitle {
       @include flex-justify-between;
       @include flex-align-center;
 
@@ -70,29 +70,29 @@
         vertical-align: middle;
         font-size: 14px;
       }
-      .viewall {
+      .viewAll {
         font-size: 12px;
         color: #262626;
         vertical-align: middle;
       }
     }
-    .user_story {
+    .userStory {
       @include flex-align-center;
 
-      .other_profilebox {
+      .otherProfilebox {
         @include flex-align-center;
         margin: 8px 12px 8px 0;
       }
-      .other_username {
+      .otherUserName {
         margin-top: 4px;
         color: #8e8e8e;
         font-size: 12px;
       }
 
-      .other_userinfo {
+      .otherUserInfo {
         @include flex-column;
       }
-      .other_profileimg {
+      .otherProfileimg {
         width: 38px;
         height: 38px;
         @include img-circle;

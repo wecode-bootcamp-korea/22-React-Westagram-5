@@ -2,7 +2,7 @@ import React from "react";
 import Comment from "./Comment";
 import "../../../../../styles/common.scss";
 import "../../../../../styles/reset.scss";
-import "../Article/FeedComment.scss";
+import "../Article/Article.scss";
 import "./Feed.scss";
 
 class FeedComment extends React.Component {

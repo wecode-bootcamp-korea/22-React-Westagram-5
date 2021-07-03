@@ -1,6 +1,5 @@
 import React from "react";
 import "../Login/Login.scss";
-import "../../../styles/common.scss";
 
 class Login extends React.Component {
   constructor() {
@@ -11,15 +10,23 @@ class Login extends React.Component {
     };
   }
 
-  handleIdInput = (event) => {
-    this.setState({
-      userId: event.target.value,
-    });
-  };
+  // handleIdInput = (event) => {
+  //   this.setState({
+  //     userId: event.target.value,
+  //   });
+  // };
 
-  handlePwInput = (event) => {
+  // handlePwInput = (event) => {
+  //   this.setState({
+  //     userPw: event.target.value,
+  //   });
+  // };
+
+  handleInput = (e) => {
+    const { name, value } = e.target;
+
     this.setState({
-      userPw: event.target.value,
+      [name]: value,
     });
   };
 
@@ -53,7 +60,7 @@ class Login extends React.Component {
 
     return (
       <>
-        <div className="LoginContainer">
+        <div className="loginContainer">
           <div className="wrap">
             <h1>westagram</h1>
             <input
@@ -62,7 +69,7 @@ class Login extends React.Component {
               id="userId"
               name="userId"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleIdInput}
+              onChange={this.handleInput}
               onKeyUp={this.handleButton}
             />
             <input
@@ -71,7 +78,7 @@ class Login extends React.Component {
               id="userPw"
               name="userPw"
               placeholder="비밀번호"
-              onChange={this.handlePwInput}
+              onChange={this.handleInput}
               onKeyUp={this.handleButton}
             />
             <button

@@ -1,0 +1,79 @@
+@import "../../../styles/common.scss";
+
+@mixin input-box {
+  width: 264px;
+  height: 40px;
+  padding: 9px 0 7px 8px;
+  border-radius: 4px;
+  @include border;
+  background-color: $bg-color;
+}
+
+.loginContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 380px;
+  @include border;
+  border-radius: 1px;
+
+  .wrap {
+    @include flex-align-center;
+    flex-direction: column;
+
+    h1 {
+      font-family: "Lobster", cursive;
+      color: #262626;
+      font-weight: 100;
+      margin: 24px 12px 28px 12px;
+      font-size: 30px;
+    }
+  }
+
+  .inputLogin {
+    @include input-box;
+    margin: 8px;
+  }
+
+  .inputPassword {
+    @include input-box;
+    margin-bottom: 16px;
+  }
+
+  .login_btn {
+    width: 264px;
+    height: 34px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 48px;
+    color: $theme-color;
+    cursor: pointer;
+    background-color: #0095f6;
+  }
+
+  // .activeBtn {
+  //   background-color: #0095f6;
+  // }
+  // .unactive {
+  //   background-color: #c0dffd;
+  // }
+
+  .forgotPassword {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+
+    a:link {
+      font-size: 12px;
+      text-decoration: none;
+      color: #0095f6;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #0095f6;
+    }
+  }
+}

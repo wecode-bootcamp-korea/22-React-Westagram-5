@@ -1,0 +1,114 @@
+@import "../../../../../styles/common.scss";
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin img-circle {
+  object-fit: cover;
+  border-radius: 70%;
+}
+
+@mixin policy-text {
+  font-size: 11px;
+  color: #c7c7c7;
+}
+
+/* main right */
+.mainRight {
+  width: 320px;
+  margin-left: 650px;
+  position: fixed;
+
+  .myprofileInsta {
+    @include flex-align-center;
+    margin: 0 0 30px 10px;
+
+    .myprofileBox {
+      @include flex-align-center;
+      overflow: hidden;
+      margin-right: 16px;
+
+      .myprofileImg {
+        width: 56px;
+        height: 56px;
+        border-radius: 70%;
+        object-fit: cover;
+      }
+    }
+  }
+  .userInformation {
+    @include flex-column;
+
+    .useridProfile,
+    .otherUserId {
+      color: #262626;
+      font-weight: 800;
+    }
+    .userName {
+      color: #8e8e8e;
+    }
+  }
+
+  .sectionStory {
+    width: 290px;
+    height: 228px;
+    background-color: $theme-color;
+    @include border;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .storyTitle {
+      @include flex-justify-between;
+      @include flex-align-center;
+
+      .story {
+        color: #8e8e8e;
+        vertical-align: middle;
+        font-size: 14px;
+      }
+      .viewAll {
+        font-size: 12px;
+        color: #262626;
+        vertical-align: middle;
+      }
+    }
+    .userStory {
+      @include flex-align-center;
+
+      .otherProfilebox {
+        @include flex-align-center;
+        margin: 8px 12px 8px 0;
+      }
+      .otherUserName {
+        margin-top: 4px;
+        color: #8e8e8e;
+        font-size: 12px;
+      }
+
+      .otherUserInfo {
+        @include flex-column;
+      }
+      .otherProfileimg {
+        width: 38px;
+        height: 38px;
+        @include img-circle;
+      }
+    }
+  }
+  .policyInfo {
+    width: 290px;
+
+    p {
+      @include policy-text;
+      margin-bottom: 12px;
+    }
+
+    span {
+      @include policy-text;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/common.scss";
+
+main {
+  width: 935px;
+  margin: 0 auto;
+  @include flex-justify-between;
+  padding-top: 80px;
+}
+
+.feedBox {
+  display: flex;
+  flex-direction: column;
+  width: 614px;
+}

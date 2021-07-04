@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Main.scss";
 import Nav from "../Nav/Nav";
 import Article from "./components/Article/Article";
 import Aside from "./components/Aside/Aside";
+import "./Main.scss";
 
 class Main extends Component {
   constructor() {
@@ -14,7 +14,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/Feed.json", { method: "GET" })
+    fetch("data/Feed.json")
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -25,7 +25,7 @@ class Main extends Component {
 
   render() {
     const { feedS } = this.state;
-
+    console.log(feedS);
     return (
       <>
         <Nav />
@@ -34,6 +34,7 @@ class Main extends Component {
             {feedS.map((eve) => {
               return (
                 <Article
+                  key={eve.feedId}
                   feedId={eve.feedId}
                   userId={eve.userId}
                   imgSrc={eve.imgSrc}
@@ -47,6 +48,7 @@ class Main extends Component {
       </>
     );
   }
+  0;
 }
 
 export default Main;

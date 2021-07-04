@@ -1,12 +1,12 @@
 import React from "react";
 import Comment from "./components/comment/Comment";
-import "./Article.scss";
 import Feed from "./components/Feed/Feed";
 import Addinput from "./components/Addinput/Addinput";
+import "./Article.scss";
 
 class Article extends React.Component {
-  constructor(e) {
-    super(e);
+  constructor() {
+    super();
 
     this.state = {
       commentValue: "",
@@ -18,13 +18,21 @@ class Article extends React.Component {
     this.setState({
       commentList: this.props.comment,
     });
-  }
+  } //왜 썼누
 
   commentInput = (e) => {
     this.setState({
       commentValue: e.target.value,
     });
   };
+
+  // commentSubmit = () => {
+  //   this.setState({
+  //     commentList: this.state.commentList.concat([this.state.commentValue]),
+  //     commentValue: "",
+  //   });
+  // };
+  // enter키로 입력
 
   enterPress = (e) => {
     if (e.key === "Enter") {
@@ -49,6 +57,8 @@ class Article extends React.Component {
   };
 
   render() {
+    const { commentList, commentValue } = this.state;
+
     return (
       <div className="feeds">
         <article className="articleAll">

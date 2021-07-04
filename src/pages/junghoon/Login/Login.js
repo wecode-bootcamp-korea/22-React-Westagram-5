@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from "react"; // route.js에 이미 임포트 되어 있다.
 import "./Login.scss";
 import "../../../styles/common.scss";
 
 class Login extends Component {
-  constructor(e) {
-    super(e);
+  constructor() {
+    super();
 
     this.state = {
       userId: "",
@@ -43,8 +43,8 @@ class Login extends Component {
       .then((result) => {
         console.log(result);
         if (result.message === "SUCCESS") {
-          this.props.history.push("/mainPark");
           localStorage.setItem("TOKEN", result.token);
+          this.props.history.push("/mainPark");
         } else {
           alert("리트라이 플리즈");
         }
@@ -61,11 +61,9 @@ class Login extends Component {
     // console.log(isEnabled);
 
     return (
-      <div className="LogInPageAll">
+      <div className="logInPageAll">
         <main className="mainLogIn">
-          <header className="mainLogo">
-            <p>Westagram</p>
-          </header>
+          <p className="mainLogo">Westagram</p>
           <div id="loginWrapper">
             <section className="loginContents">
               <div>
@@ -96,9 +94,9 @@ class Login extends Component {
               </button>
             </div>
           </div>
-          <footer className="forgotPw">
+          <div className="forgotPw">
             <p>비밀번호를 잊으셨나요?</p>
-          </footer>
+          </div>
         </main>
       </div>
     );

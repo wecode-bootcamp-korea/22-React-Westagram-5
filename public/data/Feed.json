@@ -1,0 +1,70 @@
+[
+  {
+    "feedId": 1,
+    "userId": "bauhaus_dessau_foundation",
+    "imgSrc": "https://pbs.twimg.com/media/E1q-1mrWUAEkwzD.jpg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wassily_kandinsky",
+        "content": "Welcome to world best School!"
+      },
+      {
+        "id": 2,
+        "userName": "dessau_foundation",
+        "content": "less, but better."
+      },
+      {
+        "id": 3,
+        "userName": "junghoon_Park",
+        "content": "Muyaho~~"
+      }
+    ]
+  },
+
+  {
+    "feedId": 2,
+    "userId": "anSanSang",
+    "imgSrc": "https://cdn.shopify.com/s/files/1/0313/4973/5557/products/a3_af224db3-be87-422a-9cd3-b284209da34d_1050x1050.jpg?v=1581958768",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "w123y",
+        "content": "We123chool!"
+      },
+      {
+        "id": 2,
+        "userName": "dessau_foundation",
+        "content": "less, but better."
+      },
+      {
+        "id": 3,
+        "userName": "junghoon_Park",
+        "content": "Muyaho~~"
+      }
+    ]
+  },
+
+  {
+    "feedId": 3,
+    "userId": "D-park",
+    "imgSrc": "https://contents.sixshop.com/thumbnails/uploadedFiles/98089/product/image_1583925191539_750.jpg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wa434ndinsky",
+        "content": "Welcom88968967st School!"
+      },
+      {
+        "id": 2,
+        "userName": "dessau_foundation",
+        "content": "less, but better."
+      },
+      {
+        "id": 3,
+        "userName": "junghoon_Park",
+        "content": "Muyaho~~"
+      }
+    ]
+  }
+]

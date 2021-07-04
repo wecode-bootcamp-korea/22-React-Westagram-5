@@ -1,0 +1,7 @@
+@import "../../../styles/common.scss";
+
+.mainPageAll {
+  @include flex-align-center;
+  flex-direction: column;
+  background-color: $bg-color;
+}

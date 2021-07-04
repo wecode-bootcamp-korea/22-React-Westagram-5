@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "profileImg": "images/minjae/icon_profiletitle.png",
+    "profileNickName": "wecode",
+    "feedImg": "images/minjae/feed01.png",
+    "iconHeart": "images/minjae/icon_heart.png",
+    "iconComment": "images/minjae/icon_comment.png",
+    "iconShare": "images/minjae/icon_share.png",
+
+    "comment": [
+      {
+        "commentId": 1,
+        "commentUserName": "wecode",
+        "commentContent": "Welcome to world best coding bootcamp!",
+        "isLiked": true,
+        "likeCount": "1"
+      }
+    ]
+  },
+
+  {
+    "id": 2,
+    "profileImg": "/images/minjae/icon_profiletitle.png",
+    "profileNickName": "joonsikyang",
+    "feedImg": "/images/minjae/feed02.png",
+    "iconHeart": "/images/minjae/icon_heart.png",
+    "iconComment": "/images/minjae/icon_comment.png",
+    "iconShare": "/images/minjae/icon_share.png",
+
+    "comment": [
+      {
+        "commentId": 1,
+        "commentUserName": "joonsikyang",
+        "commentContent": "Hi there.",
+        "isLiked": false,
+        "likeCount": "14"
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "profileImg": "/images/minjae/icon_profiletitle.png",
+    "profileNickName": "jayPark",
+    "feedImg": "/images/minjae/feed03.png",
+    "iconHeart": "http://localhost:3000/images/minjae/icon_heart.png",
+    "iconComment": "/images/minjae/icon_comment.png",
+    "iconShare": "/images/minjae/icon_share.png",
+
+    "comment": [
+      {
+        "commentId": 1,
+        "commentUserName": "jayPa",
+        "commentContent": "Hey.",
+        "isLiked": false,
+        "likeCount": "10"
+      }
+    ]
+  }
+]

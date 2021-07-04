@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import "../../../styles/common.scss";
+
+.Login {
+  height: 100vh;
+  background-color: $bg-color;
+
+  .all {
+    @include flex-justify-center;
+
+    .loginall {
+      @include border;
+      background-color: $theme-color;
+      width: 360px;
+      height: 400px;
+      margin: 25% 0;
+      padding-top: 40px;
+      align-content: center;
+      flex-wrap: wrap;
+
+      .logo {
+        text-align: center;
+        font-family: "Lobster", cursive;
+        font-size: 40px;
+        margin-bottom: 30px;
+        color: #262626;
+      }
+
+      .form {
+        text-align: center;
+
+        .id,
+        .password {
+          @include border;
+          background-color: $bg-color;
+          width: 260px;
+          height: 36px;
+          font-size: 10px;
+          font-weight: 500;
+          border-radius: 2px;
+          padding-left: 10px;
+          margin-bottom: 4px;
+        }
+
+        input::placeholder {
+          color: rgb(152, 152, 152);
+        }
+
+        input:focus {
+          outline: 1px solid #aaaaaa;
+        }
+
+        .button {
+          font-weight: bold;
+          background-color: $login-btn-color;
+          width: 260px;
+          height: 34px;
+          padding: 6px;
+          border-radius: 4px;
+          border: 0;
+          font-size: 12px;
+          color: $theme-color;
+          margin-top: 8px;
+        }
+      }
+
+      .bottom {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 80px;
+        color: $login-btn-color;
+
+        .pw {
+          text-decoration: none;
+
+          &:visited {
+            text-decoration: none;
+            color: $login-btn-color;
+          }
+
+          &:active {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

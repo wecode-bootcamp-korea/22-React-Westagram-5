@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import "../../../styles/common.scss";
+
+.container {
+  background-color: $bg-color;
+  margin-top: 64px;
+
+  .mainInner {
+    @include flex-justify-center;
+  }
+}

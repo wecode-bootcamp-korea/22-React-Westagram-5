@@ -1,0 +1,48 @@
+@import "../../../../../styles/common.scss";
+
+.Aside {
+  margin: 30px 0 0 10px;
+
+  .profile {
+    @include flex-align-center;
+
+    .profileIcon {
+      width: 56px;
+    }
+
+    .profileText {
+      margin-left: 8px;
+      display: flex;
+      flex-direction: column;
+
+      .nickName2,
+      .company {
+        margin: 2px;
+      }
+    }
+  }
+
+  .story {
+    @include border;
+    background-color: $theme-color;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 4px;
+
+    .storyTitle {
+      font-size: 14px;
+      font-weight: bold;
+      color: rgb(182, 182, 182);
+    }
+
+    .asideName {
+      @include flex-align-center;
+      margin: 10px 0;
+      width: 280px;
+
+      .asideIcon {
+        width: 32px;
+      }
+    }
+  }
+}

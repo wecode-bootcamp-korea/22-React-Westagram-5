@@ -8,6 +8,7 @@ class Article extends Component {
 
     this.state = {
       feedList: [],
+      newComment: "",
     };
   }
 
@@ -23,22 +24,31 @@ class Article extends Component {
       });
   }
 
-  feedListConcat = () => {
-    // const feedList = [...this.state.feedList, {id: }]
-
+  feedListConcat = (feedId, iptCommentValue) => {
+    const targetId = feedId - 1;
     const newComment = [
       {
-        id: this.state.feedList.length + 1,
+        commentId: this.state.feedList[targetId].comment.length + 1,
         commentUserName: "rious275",
-        commentContent: [this.state.iptCommentValue],
+        commentContent: iptCommentValue,
         isLiked: true,
+        likeCount: "1",
       },
     ];
+
+    // 1. feedList를 카피한다.
+    // 2. 카피한 데이터를 코멘트로 추가한다.
+
+    const newFeedList = [...this.state.feedList];
+
+    newFeedList[targetId] = {
+      ...newFeedList[targetId],
+      comment: newFeedList[targetId].comment.concat(newComment),
+    };
+
     this.setState({
-      feedList: this.state.feedList.concat(newComment), //해당 리스트의 id값을 갖고있는 comment에 달아줘야됌
-      iptCommentValue: "",
+      feedList: newFeedList,
     });
-    // console.log(this.state.iptCommentValue);
   };
 
   render() {
@@ -46,22 +56,15 @@ class Article extends Component {
       <div>
         {this.state.feedList.map((feed) => {
           return (
-            <Feed
-              feedListConcat={this.feedListConcat}
-              feed={feed}
-              comment={feed.comment}
-              id={feed.id}
-              profileImg={feed.profileImg}
-              profileNickName={feed.profileNickName}
-              feedImg={feed.feedImg}
-              iconHeart={feed.iconHeart}
-              iconComment={feed.iconComment}
-              iconShare={feed.iconShare}
-              // commentContent={feedList.commentContent}
-              // commentUserName={feedList.commentUserName}
-              isLiked={feed.isLiked}
-              likeCount={feed.likeCount}
-            />
+            <>
+              <Feed
+                parent={this.parent}
+                key={feed.id}
+                feedListConcat={this.feedListConcat}
+                feed={feed}
+                comment={feed.comment}
+              />
+            </>
           );
         })}
       </div>

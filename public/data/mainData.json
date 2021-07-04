@@ -30,7 +30,7 @@
 
     "comment": [
       {
-        "commentId": 2,
+        "commentId": 1,
         "commentUserName": "joonsikyang",
         "commentContent": "Hi there.",
         "isLiked": false,
@@ -50,7 +50,7 @@
 
     "comment": [
       {
-        "commentId": 3,
+        "commentId": 1,
         "commentUserName": "jayPa",
         "commentContent": "Hey.",
         "isLiked": false,

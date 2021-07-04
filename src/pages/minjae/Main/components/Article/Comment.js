@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Comment extends Component {
   render() {
     // console.log("Comment>>>>", this.props.name);
-
     // console.log("Comment props: ", this.props);
+
     return (
       <div>
         <li>

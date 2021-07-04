@@ -7,13 +7,9 @@ class Feed extends Component {
 
     this.state = {
       iptCommentValue: "",
-      likeCount: "",
     };
   }
 
-  componentDidMount() {
-    console.log(this.props.feed);
-  }
   handleCommentBox = (e) => {
     this.setState({ iptCommentValue: e.target.value });
   };
@@ -21,13 +17,11 @@ class Feed extends Component {
   handleCommentBtn = (e) => {
     e.preventDefault();
 
-    this.props.feedListConcat();
-
+    this.props.feedListConcat(this.props.feed.id, this.state.iptCommentValue);
     this.setState({
       iptCommentValue: "",
     });
   };
-  // concat 돌리는 함수가 여기서는 호출만되게 부모에서 함수를 만든다.
 
   render() {
     const { iptCommentValue } = this.state;
@@ -66,16 +60,19 @@ class Feed extends Component {
           </div>
           <div className="like">좋아요 {this.props.feed.likeCount}개</div>
           <ul className="feedComment">
-            {/* 조건부 렌더링 */}
-
-            {console.log(this.props.feed)}
-            {this.props.feed.comment && (
-              <span>
-                <span>{this.props.feed.comment[0].commentUserName}</span>
-                <span>{this.props.feed.comment[0].commentContent}</span>
-              </span>
-            )}
-
+            {
+              this.props.feed.comment &&
+                this.props.feed.comment.map((ment) => (
+                  <Comment
+                    commentContent={ment.commentContent}
+                    commentUserName={ment.commentUserName}
+                  />
+                ))
+              // <Comment
+              //   commentUserName={this.props.comment[0].commentUserName}
+              //   commentContent={this.props.comment[0].commentContent}
+              // />
+            }
             {/* {this.props.feed.comment.map((feed) => {
               return (
                 <Comment
